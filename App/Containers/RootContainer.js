@@ -22,6 +22,15 @@ class RootContainer extends Component {
         console.log(utils);
         console.log('=======02====ethers-utils=========================');
     }
+    _testEtherscan=()=>{
+        console.log('=======03====etherscan-api=========================');
+        const api = require('etherscan-api').init('YourApiKey');
+        const balance = api.account.balance('0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae');
+        balance.then((balanceData) => {
+            console.log(balanceData);
+        });
+        console.log('=======03====etherscan-api=========================');
+    }
 
     componentDidMount () {
     // if redux persist is not active fire startup action
@@ -30,7 +39,7 @@ class RootContainer extends Component {
         }
         this._testRegexp();
         this._testUtils();
-
+        this._testEtherscan();
     }
 
     render () {
