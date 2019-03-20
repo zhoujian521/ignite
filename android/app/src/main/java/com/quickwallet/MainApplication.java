@@ -3,6 +3,7 @@ package com.quickwallet;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.horcrux.svg.SvgPackage;
 import com.mkuczera.RNReactNativeHapticFeedbackPackage;
 import com.lugg.ReactNativeConfig.ReactNativeConfigPackage;
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
@@ -29,6 +30,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new SvgPackage(),
             new RNReactNativeHapticFeedbackPackage(),
             new ReactNativeConfigPackage(),
             new RNDeviceInfo(),

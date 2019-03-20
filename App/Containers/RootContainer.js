@@ -13,6 +13,7 @@ import Spinner from 'react-native-loading-spinner-overlay';
 import Overlay from 'react-native-modal-overlay';
 import Toast from 'react-native-root-toast';
 import ScrollableTabView, { DefaultTabBar, } from 'react-native-scrollable-tab-view';
+import Swiper from 'react-native-swiper';
 
 // Styles
 import styles from './Styles/RootContainerStyles';
@@ -91,6 +92,17 @@ class RootContainer extends Component {
                     <View></View>
                     <View></View>
                 </ScrollableTabView> */}
+                {/* <Swiper showsButtons>
+                    <View style={styles.slide1}>
+                        <Text style={styles.text}>Hello Swiper</Text>
+                    </View>
+                    <View style={styles.slide2}>
+                        <Text style={styles.text}>Beautiful</Text>
+                    </View>
+                    <View style={styles.slide3}>
+                        <Text style={styles.text}>And simple</Text>
+                    </View>
+                </Swiper> */}
                 <StatusBar barStyle='light-content' />
                 <ReduxNavigation />
             </View>
