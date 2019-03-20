@@ -14,6 +14,8 @@ import Overlay from 'react-native-modal-overlay';
 import Toast from 'react-native-root-toast';
 import ScrollableTabView, { DefaultTabBar, } from 'react-native-scrollable-tab-view';
 import Swiper from 'react-native-swiper';
+// import QRCode from 'react-native-qrcode-svg';
+
 
 // Styles
 import styles from './Styles/RootContainerStyles';
@@ -111,8 +113,9 @@ class RootContainer extends Component {
                         <Text style={styles.text}>And simple</Text>
                     </View>
                 </Swiper> */}
-                <StatusBar barStyle='light-content' />
-                <ReduxNavigation />
+                {/* <QRCode value="http://awesome.link.qr"/> */}
+                {/* <StatusBar barStyle='light-content' />
+                <ReduxNavigation /> */}
             </View>
         );
     }
