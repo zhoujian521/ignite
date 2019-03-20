@@ -11,6 +11,7 @@ import  Identicon from 'identicon.js';
 import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
 import Spinner from 'react-native-loading-spinner-overlay';
 import Overlay from 'react-native-modal-overlay';
+import Toast from 'react-native-root-toast';
 
 // Styles
 import styles from './Styles/RootContainerStyles';
@@ -53,6 +54,12 @@ class RootContainer extends Component {
         console.log(ReactNativeHapticFeedback);
         console.log('=======06====HapticFeedback=========================');
     }
+    _testToast=()=>{
+        Toast.show('111111111111111111111111', {
+            shadow:true,
+            position: Toast.positions.CENTER,
+        });
+    }
 
     componentDidMount () {
 
@@ -66,6 +73,7 @@ class RootContainer extends Component {
         this._testIdenticon();
         this._testMoment();
         this._testHapticFeedback();
+        this._testToast();
     }
 
     render () {
