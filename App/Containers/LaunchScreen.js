@@ -29,7 +29,7 @@ export default class LaunchScreen extends Component {
       console.log('===============path=====================');
 
       setTimeout(()=>{
-          RNExitApp.exitApp();
+          // RNExitApp.exitApp();
       }, 3000);
   }
 
@@ -39,7 +39,7 @@ export default class LaunchScreen extends Component {
               <Button style={[styles.centered, {backgroundColor:'cyan'}]}/>
               <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />
               <ScrollView style={styles.container}>
-
+                  <QRCode value="http://awesome.link.qr"/>
               </ScrollView>
 
           </View>
