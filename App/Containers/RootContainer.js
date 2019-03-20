@@ -9,11 +9,20 @@ import ReduxPersist from '../Config/ReduxPersist';
 import styles from './Styles/RootContainerStyles';
 
 class RootContainer extends Component {
+    _testRegexp=()=>{
+        const escapeStringRegexp = require('escape-string-regexp');
+        console.log('=======01====escapeStringRegexp=========================');
+        console.log(escapeStringRegexp);
+        console.log('=======01====escapeStringRegexp=========================');
+    }
+
     componentDidMount () {
     // if redux persist is not active fire startup action
         if (!ReduxPersist.active) {
             this.props.startup();
         }
+        this._testRegexp();
+
     }
 
     render () {
