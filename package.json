@@ -21,7 +21,8 @@
     "lint": "standard --verbose | snazzy",
     "lintdiff": "git diff --name-only --cached --relative | grep '\\.js$' | xargs standard | snazzy",
     "fixcode": "standard --fix",
-    "git-hook": "npm run lint -s && npm run test -s"
+    "git-hook": "npm run lint -s && npm run test -s",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0"
   },
   "dependencies": {
     "apisauce": "^0.14.2",
@@ -59,6 +60,7 @@
     "babel-plugin-ignite-ignore-reactotron": "^0.3.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react-native": "^3.0.2",
+    "cz-conventional-changelog": "^2.1.0",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "ignite-andross": "^3.0.4",
@@ -100,7 +102,14 @@
     ],
     "preset": "react-native"
   },
-  "config": {},
+  "config": {
+    "ghooks": {
+      "commit-msg": "./validate-commit-msg.js"
+    },
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "standard": {
     "parser": "babel-eslint",
     "globals": [
