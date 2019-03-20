@@ -12,6 +12,7 @@ import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
 import Spinner from 'react-native-loading-spinner-overlay';
 import Overlay from 'react-native-modal-overlay';
 import Toast from 'react-native-root-toast';
+import ScrollableTabView, { DefaultTabBar, } from 'react-native-scrollable-tab-view';
 
 // Styles
 import styles from './Styles/RootContainerStyles';
@@ -85,6 +86,11 @@ class RootContainer extends Component {
                 {/* <Overlay visible closeOnTouchOutside>
                     <Text>Some Modal Content</Text>
                 </Overlay> */}
+                {/* <ScrollableTabView
+                    renderTabBar={() => <DefaultTabBar/>}>
+                    <View></View>
+                    <View></View>
+                </ScrollableTabView> */}
                 <StatusBar barStyle='light-content' />
                 <ReduxNavigation />
             </View>
