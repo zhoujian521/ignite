@@ -9,6 +9,8 @@ target 'QuickWallet' do
 
   pod 'react-native-config', :path => '../node_modules/react-native-config'
 
+  pod 'react-native-haptic-feedback', :path => '../node_modules/react-native-haptic-feedback'
+
   target 'QuickWalletTests' do
     inherit! :search_paths
     # Pods for testing

@@ -8,6 +8,8 @@ import ReduxPersist from '../Config/ReduxPersist';
 import utils from 'ethers-utils';
 import  Identicon from 'identicon.js';
 
+import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
+
 // Styles
 import styles from './Styles/RootContainerStyles';
 
@@ -44,9 +46,15 @@ class RootContainer extends Component {
         console.log(moment().format());
         console.log('=======05====moment=========================');
     }
+    _testHapticFeedback=()=>{
+        console.log('=======06====HapticFeedback=========================');
+        console.log(ReactNativeHapticFeedback);
+        console.log('=======06====HapticFeedback=========================');
+    }
 
     componentDidMount () {
-    // if redux persist is not active fire startup action
+
+        // if redux persist is not active fire startup action
         if (!ReduxPersist.active) {
             this.props.startup();
         }
@@ -55,6 +63,7 @@ class RootContainer extends Component {
         this._testEtherscan();
         this._testIdenticon();
         this._testMoment();
+        this._testHapticFeedback();
     }
 
     render () {
