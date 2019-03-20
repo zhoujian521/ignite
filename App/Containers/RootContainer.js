@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import StartupActions from '../Redux/StartupRedux';
 import ReduxPersist from '../Config/ReduxPersist';
 
+import utils from 'ethers-utils';
+
 // Styles
 import styles from './Styles/RootContainerStyles';
 
@@ -15,6 +17,11 @@ class RootContainer extends Component {
         console.log(escapeStringRegexp);
         console.log('=======01====escapeStringRegexp=========================');
     }
+    _testUtils=()=>{
+        console.log('=======02====ethers-utils=========================');
+        console.log(utils);
+        console.log('=======02====ethers-utils=========================');
+    }
 
     componentDidMount () {
     // if redux persist is not active fire startup action
@@ -22,6 +29,7 @@ class RootContainer extends Component {
             this.props.startup();
         }
         this._testRegexp();
+        this._testUtils();
 
     }
 

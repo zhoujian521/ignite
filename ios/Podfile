@@ -7,6 +7,8 @@ target 'QuickWallet' do
 
   # Pods for QuickWallet
 
+  pod 'react-native-config', :path => '../node_modules/react-native-config'
+
   target 'QuickWalletTests' do
     inherit! :search_paths
     # Pods for testing
