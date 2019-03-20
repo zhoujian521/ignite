@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StatusBar } from 'react-native';
+import { View, StatusBar, Alert, Text } from 'react-native';
 import ReduxNavigation from '../Navigation/ReduxNavigation';
 import { connect } from 'react-redux';
 import StartupActions from '../Redux/StartupRedux';
@@ -9,6 +9,8 @@ import utils from 'ethers-utils';
 import  Identicon from 'identicon.js';
 
 import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
+import Spinner from 'react-native-loading-spinner-overlay';
+import Overlay from 'react-native-modal-overlay';
 
 // Styles
 import styles from './Styles/RootContainerStyles';
@@ -67,8 +69,14 @@ class RootContainer extends Component {
     }
 
     render () {
+
         return (
             <View style={styles.applicationView}>
+                {/* <Spinner visible cancelable
+                    textContent={'Loading...'}/> */}
+                {/* <Overlay visible closeOnTouchOutside>
+                    <Text>Some Modal Content</Text>
+                </Overlay> */}
                 <StatusBar barStyle='light-content' />
                 <ReduxNavigation />
             </View>
