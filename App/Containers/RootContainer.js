@@ -34,9 +34,15 @@ class RootContainer extends Component {
     }
     _testIdenticon=()=>{
         console.log('=======04====Identicon=========================');
-        const data = new Identicon('d3b07384d113edec49eaa6238ad5ff00', 420).toString();
-        console.log(data);
+        // const data = new Identicon('d3b07384d113edec49eaa6238ad5ff00', 420).toString();
+        // console.log(data.toString());
         console.log('=======04====Identicon=========================');
+    }
+    _testMoment=()=>{
+        console.log('=======05====moment=========================');
+        const moment = require('moment');
+        console.log(moment().format());
+        console.log('=======05====moment=========================');
     }
 
     componentDidMount () {
@@ -48,6 +54,7 @@ class RootContainer extends Component {
         this._testUtils();
         this._testEtherscan();
         this._testIdenticon();
+        this._testMoment();
     }
 
     render () {
