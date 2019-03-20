@@ -6,6 +6,7 @@ import StartupActions from '../Redux/StartupRedux';
 import ReduxPersist from '../Config/ReduxPersist';
 
 import utils from 'ethers-utils';
+import  Identicon from 'identicon.js';
 
 // Styles
 import styles from './Styles/RootContainerStyles';
@@ -31,6 +32,12 @@ class RootContainer extends Component {
         });
         console.log('=======03====etherscan-api=========================');
     }
+    _testIdenticon=()=>{
+        console.log('=======04====Identicon=========================');
+        const data = new Identicon('d3b07384d113edec49eaa6238ad5ff00', 420).toString();
+        console.log(data);
+        console.log('=======04====Identicon=========================');
+    }
 
     componentDidMount () {
     // if redux persist is not active fire startup action
@@ -40,6 +47,7 @@ class RootContainer extends Component {
         this._testRegexp();
         this._testUtils();
         this._testEtherscan();
+        this._testIdenticon();
     }
 
     render () {
