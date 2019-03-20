@@ -62,6 +62,13 @@ class RootContainer extends Component {
             position: Toast.positions.CENTER,
         });
     }
+    _testSprintf=()=>{
+        const sprintf = require('sprintf-js').sprintf;
+        console.log('=======07====_testSprintf=========================');
+        console.log(sprintf);
+        console.log('=======07====_testSprintf=========================');
+    }
+
 
     componentDidMount () {
 
@@ -76,6 +83,7 @@ class RootContainer extends Component {
         this._testMoment();
         this._testHapticFeedback();
         this._testToast();
+        this._testSprintf();
     }
 
     render () {
