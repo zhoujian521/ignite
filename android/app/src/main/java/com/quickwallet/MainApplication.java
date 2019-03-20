@@ -3,6 +3,8 @@ package com.quickwallet;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.github.wumke.RNExitApp.RNExitAppPackage;
+import org.reactnative.camera.RNCameraPackage;
 import com.rnfs.RNFSPackage;
 import com.horcrux.svg.SvgPackage;
 import com.mkuczera.RNReactNativeHapticFeedbackPackage;
@@ -31,6 +33,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNExitAppPackage(),
+            new RNCameraPackage(),
             new RNFSPackage(),
             new SvgPackage(),
             new RNReactNativeHapticFeedbackPackage(),

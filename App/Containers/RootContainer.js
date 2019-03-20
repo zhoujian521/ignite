@@ -114,8 +114,8 @@ class RootContainer extends Component {
                     </View>
                 </Swiper> */}
                 {/* <QRCode value="http://awesome.link.qr"/> */}
-                {/* <StatusBar barStyle='light-content' />
-                <ReduxNavigation /> */}
+                <StatusBar barStyle='light-content' />
+                <ReduxNavigation />
             </View>
         );
     }

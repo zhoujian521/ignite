@@ -9,23 +9,28 @@ import { Button } from 'react-native-elements';
 // Styles
 import styles from './Styles/LaunchScreenStyles';
 
+import { RNCamera } from 'react-native-camera';
+import RNExitApp from 'react-native-exit-app';
+import QRCodeScanner from 'react-native-qrcode-scanner';
+import QRCode from 'react-native-qrcode-svg';
+
 export default class LaunchScreen extends Component {
 
   componentDidMount=()=>{
 
       console.log('===============path=====================');
-      // console.log(RNCamera);
+      console.log(RNCamera);
 
-      // const RNFS = require('react-native-fs');
-      // console.log(RNFS);
+      const RNFS = require('react-native-fs');
+      console.log(RNFS);
 
-      // console.log(QRCodeScanner);
+      console.log(QRCodeScanner);
 
       console.log('===============path=====================');
 
-      // setTimeout(()=>{
-      // // RNExitApp.exitApp();
-      // }, 3000);
+      setTimeout(()=>{
+          RNExitApp.exitApp();
+      }, 3000);
   }
 
   render () {
