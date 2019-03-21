@@ -1,129 +1,104 @@
 import React, { Component } from 'react';
-import { View, StatusBar, Alert, Text } from 'react-native';
+import { View, StatusBar, Text} from 'react-native';
 import ReduxNavigation from '../Navigation/ReduxNavigation';
 import { connect } from 'react-redux';
-import StartupActions from '../Redux/StartupRedux';
-import ReduxPersist from '../Config/ReduxPersist';
-
-import utils from 'ethers-utils';
-import  Identicon from 'identicon.js';
-
-import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
-import Spinner from 'react-native-loading-spinner-overlay';
-import Overlay from 'react-native-modal-overlay';
-import Toast from 'react-native-root-toast';
-import ScrollableTabView, { DefaultTabBar, } from 'react-native-scrollable-tab-view';
-import Swiper from 'react-native-swiper';
-// import QRCode from 'react-native-qrcode-svg';
-
-
-// Styles
 import styles from './Styles/RootContainerStyles';
 
+import WalletActions from '../Redux/WalletRedux';
+import {DeviceStorage, Keys} from '../Lib/DeviceStorage';
+
+import UserActions from '../Redux/UserRedux';
+import ConfigActions from '../Redux/ConfigRedux';
+import {LanguageConfig, CurrencyConfig} from '../Config/MineConfig';
+import {Preferences, PrefKeys} from '../Lib/Preferences';
+
 class RootContainer extends Component {
-    _testRegexp=()=>{
-        const escapeStringRegexp = require('escape-string-regexp');
-        console.log('=======01====escapeStringRegexp=========================');
-        console.log(escapeStringRegexp);
-        console.log('=======01====escapeStringRegexp=========================');
-    }
-    _testUtils=()=>{
-        console.log('=======02====ethers-utils=========================');
-        console.log(utils);
-        console.log('=======02====ethers-utils=========================');
-    }
-    _testEtherscan=()=>{
-        console.log('=======03====etherscan-api=========================');
-        const api = require('etherscan-api').init('YourApiKey');
-        const balance = api.account.balance('0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae');
-        balance.then((balanceData) => {
-            console.log(balanceData);
-        });
-        console.log('=======03====etherscan-api=========================');
-    }
-    _testIdenticon=()=>{
-        console.log('=======04====Identicon=========================');
-        // const data = new Identicon('d3b07384d113edec49eaa6238ad5ff00', 420).toString();
-        // console.log(data.toString());
-        console.log('=======04====Identicon=========================');
-    }
-    _testMoment=()=>{
-        console.log('=======05====moment=========================');
-        const moment = require('moment');
-        console.log(moment().format());
-        console.log('=======05====moment=========================');
-    }
-    _testHapticFeedback=()=>{
-        console.log('=======06====HapticFeedback=========================');
-        console.log(ReactNativeHapticFeedback);
-        console.log('=======06====HapticFeedback=========================');
-    }
-    _testToast=()=>{
-        Toast.show('111111111111111111111111', {
-            shadow:true,
-            position: Toast.positions.CENTER,
-        });
-    }
-    _testSprintf=()=>{
-        const sprintf = require('sprintf-js').sprintf;
-        console.log('=======07====_testSprintf=========================');
-        console.log(sprintf);
-        console.log('=======07====_testSprintf=========================');
-    }
 
+  constructor(props){
+    super(props);
+    this.state = { realm: null };
+  }
 
-    componentDidMount () {
+  _initializes= async ()=>{
+      this.props.getInjectScript();
 
-        // if redux persist is not active fire startup action
-        if (!ReduxPersist.active) {
-            this.props.startup();
-        }
-        this._testRegexp();
-        this._testUtils();
-        this._testEtherscan();
-        this._testIdenticon();
-        this._testMoment();
-        this._testHapticFeedback();
-        this._testToast();
-        this._testSprintf();
-    }
+      const language = Preferences.getPrefsObjectBy(PrefKeys.LANGUAGE_ENVIRONMENT) || LanguageConfig.zh;
+      const currency = await DeviceStorage.getItem(Keys.MONETARY_UNIT) || CurrencyConfig.CNY;
+      this.props.saveUserInfo({language, currency});
 
-    render () {
+      const isAgree = await DeviceStorage.getItem(Keys.IS_AGREED_TERMS_OF_USE) || false;
+      this.props.saveUserInfo({isAgreeInfo:isAgree});
 
-        return (
-            <View style={styles.applicationView}>
-                {/* <Spinner visible cancelable
-                    textContent={'Loading...'}/> */}
-                {/* <Overlay visible closeOnTouchOutside>
-                    <Text>Some Modal Content</Text>
-                </Overlay> */}
-                {/* <ScrollableTabView
-                    renderTabBar={() => <DefaultTabBar/>}>
-                    <View></View>
-                    <View></View>
-                </ScrollableTabView> */}
-                {/* <Swiper showsButtons>
-                    <View style={styles.slide1}>
-                        <Text style={styles.text}>Hello Swiper</Text>
-                    </View>
-                    <View style={styles.slide2}>
-                        <Text style={styles.text}>Beautiful</Text>
-                    </View>
-                    <View style={styles.slide3}>
-                        <Text style={styles.text}>And simple</Text>
-                    </View>
-                </Swiper> */}
-                {/* <QRCode value="http://awesome.link.qr"/> */}
-                <StatusBar barStyle='light-content' />
-                <ReduxNavigation />
-            </View>
-        );
-    }
+      const isLogin = await DeviceStorage.getItem(Keys.IS_USER_LOGINED) || false;
+      this.props.saveUserInfo({isLoginInfo:isLogin});
+
+      this.props.getConfigRequest();
+
+      this.props.gethInit();
+      if (!isLogin) return;
+
+      const address = await DeviceStorage.getItem(Keys.WALLET_ADDRESS) || '';
+      this.props.getUserInfoRequest({address});
+  }
+
+  componentDidMount  () {
+      this._initializes();
+  }
+
+  render () {
+      return (
+          <View style={styles.applicationView}>
+              <StatusBar barStyle='light-content' />
+              <ReduxNavigation />
+          </View>
+      );
+  }
 }
 
-// wraps dispatch to create nicer functions to call within our component
+const mapStateToProps = (state) =>{
+    const {
+        config:{locale}
+    } = state;
+    return {locale};
+};
+
 const mapDispatchToProps = (dispatch) => ({
-    startup: () => dispatch(StartupActions.startup())
+    getUserInfoRequest: (params) => dispatch(UserActions.getUserInfoRequest(params)),
+    getInjectScript: () => dispatch(UserActions.getInjectScript()),
+    getConfigRequest: () => dispatch(ConfigActions.getConfigRequest()),
+    saveUserInfo: (params) => dispatch(UserActions.saveUserInfo(params)),
+    gethInit: () => dispatch(WalletActions.gethInit()),
 });
 
-export default connect(null, mapDispatchToProps)(RootContainer);
+export default connect(mapStateToProps,mapDispatchToProps)(RootContainer);
+
+
+
+// _initLayer2 = async ()=>{
+
+//   const cpKey = 'HDNQOXNWALXMIWNCBHD';
+//   const address = '0xb5538753F2641A83409D2786790b42aC857C5340';
+//   const socketUrl = 'www.baidu.com';
+
+//   Layer2Module.initL2SDK(cpKey,  address, socketUrl,(data)=>{
+
+//       console.log('====================================');
+//       console.log(data);
+//       console.log('====================================');
+//   });
+
+
+//   const command = 'HDNQOXNWALXMIWNCBHD';
+//   const params = {
+//       pnAddress:'0xb5538753F2641A83409D2786790b42aC857C5340 0xb5538753F2641A83409D2786790b42aC857C5340',
+//       amount:'10000'
+//   };
+//   const body = JSON.stringify(params);
+
+//   Layer2Module.call(command, body, (data)=>{
+//       console.log('====================================');
+//       console.log(data);
+//       console.log('====================================');
+//   });
+
+// }

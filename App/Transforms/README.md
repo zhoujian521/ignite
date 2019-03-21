@@ -1,6 +1,6 @@
 # Transforms
 
-A common pattern when working with APIs is to change data to play nice between your app & the API.
+A common pattern when working with APIs is to change data to play nice between your app & the API.  
 
 We've found this to be the case in every project we've worked on.  So much so that we're recommending that you create a folder dedicated to these transformations.
 
