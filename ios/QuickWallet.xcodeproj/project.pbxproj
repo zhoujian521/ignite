@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -25,6 +26,17 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		181EE4CB83FE4983842F32F2 /* libReactNativeConfig.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B75C88E491346B181E04A03 /* libReactNativeConfig.a */; };
 		21BC0BA1401C4B75A8A38A64 /* libRNExitApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5A6D78318B46368925516B /* libRNExitApp.a */; };
+		23E8F9D022435DAD00016E54 /* Geth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23E8F9CA22435DAD00016E54 /* Geth.framework */; };
+		23E8F9D122435DAD00016E54 /* iVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E8F9CD22435DAD00016E54 /* iVersion.m */; };
+		23E8F9D222435DAD00016E54 /* iVersion.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 23E8F9CE22435DAD00016E54 /* iVersion.bundle */; };
+		23E8F9D322435DAD00016E54 /* AlphaWalletWeb3Provider.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 23E8F9CF22435DAD00016E54 /* AlphaWalletWeb3Provider.bundle */; };
+		23E8F9E6224362E300016E54 /* RCTLayer2Module.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E8F9D8224362E300016E54 /* RCTLayer2Module.m */; };
+		23E8F9E7224362E300016E54 /* RCTBundleModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E8F9DB224362E300016E54 /* RCTBundleModule.m */; };
+		23E8F9E8224362E300016E54 /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E8F9E0224362E300016E54 /* FileManager.m */; };
+		23E8F9E9224362E300016E54 /* SignModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E8F9E1224362E300016E54 /* SignModel.m */; };
+		23E8F9EA224362E300016E54 /* NSData+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E8F9E5224362E300016E54 /* NSData+Category.m */; };
+		23E8F9ED2243632100016E54 /* RCTGethModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E8F9EB2243632000016E54 /* RCTGethModule.m */; };
+		23E8F9F02243635A00016E54 /* OCWeb3Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E8F9EF2243635A00016E54 /* OCWeb3Utils.m */; };
 		242FD689437344E69A111BEB /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCAD695E98F741649B4C57E0 /* FontAwesome5_Solid.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -464,6 +476,25 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		161384D9824A48F186CF5F97 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = "<group>"; };
 		1AC65C9E841546E79CEEC41A /* RNDeviceInfo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNDeviceInfo.xcodeproj; path = "../node_modules/react-native-device-info/RNDeviceInfo.xcodeproj"; sourceTree = "<group>"; };
+		23E8F9CA22435DAD00016E54 /* Geth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Geth.framework; sourceTree = "<group>"; };
+		23E8F9CC22435DAD00016E54 /* iVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iVersion.h; sourceTree = "<group>"; };
+		23E8F9CD22435DAD00016E54 /* iVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iVersion.m; sourceTree = "<group>"; };
+		23E8F9CE22435DAD00016E54 /* iVersion.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iVersion.bundle; sourceTree = "<group>"; };
+		23E8F9CF22435DAD00016E54 /* AlphaWalletWeb3Provider.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlphaWalletWeb3Provider.bundle; sourceTree = "<group>"; };
+		23E8F9D8224362E300016E54 /* RCTLayer2Module.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTLayer2Module.m; sourceTree = "<group>"; };
+		23E8F9D9224362E300016E54 /* RCTLayer2Module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTLayer2Module.h; sourceTree = "<group>"; };
+		23E8F9DB224362E300016E54 /* RCTBundleModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTBundleModule.m; sourceTree = "<group>"; };
+		23E8F9DC224362E300016E54 /* RCTBundleModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTBundleModule.h; sourceTree = "<group>"; };
+		23E8F9DE224362E300016E54 /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
+		23E8F9DF224362E300016E54 /* SignModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignModel.h; sourceTree = "<group>"; };
+		23E8F9E0224362E300016E54 /* FileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileManager.m; sourceTree = "<group>"; };
+		23E8F9E1224362E300016E54 /* SignModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignModel.m; sourceTree = "<group>"; };
+		23E8F9E4224362E300016E54 /* NSData+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Category.h"; sourceTree = "<group>"; };
+		23E8F9E5224362E300016E54 /* NSData+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Category.m"; sourceTree = "<group>"; };
+		23E8F9EB2243632000016E54 /* RCTGethModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTGethModule.m; sourceTree = "<group>"; };
+		23E8F9EC2243632100016E54 /* RCTGethModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTGethModule.h; sourceTree = "<group>"; };
+		23E8F9EE2243635A00016E54 /* OCWeb3Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCWeb3Utils.h; sourceTree = "<group>"; };
+		23E8F9EF2243635A00016E54 /* OCWeb3Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCWeb3Utils.m; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* QuickWallet-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuickWallet-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* QuickWallet-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "QuickWallet-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -542,6 +573,7 @@
 				9ACC45A4976A483D88A0357F /* libRNSVG.a in Frameworks */,
 				DFF1487298BC4288A8889F4B /* libRNCamera.a in Frameworks */,
 				21BC0BA1401C4B75A8A38A64 /* libRNExitApp.a in Frameworks */,
+				23E8F9D022435DAD00016E54 /* Geth.framework in Frameworks */,
 				B2B2BE0739D24EA2B10443C5 /* libRNFS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -657,6 +689,10 @@
 		13B07FAE1A68108700A75B9A /* QuickWallet */ = {
 			isa = PBXGroup;
 			children = (
+				23E8F9E3224362E300016E54 /* Category */,
+				23E8F9D6224362E300016E54 /* NativeModules */,
+				23E8F9E2224362E300016E54 /* Swift */,
+				23E8F9C922435D8600016E54 /* Frameworks */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -793,6 +829,89 @@
 				231B48432242704B00563683 /* libRNFS.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		23E8F9C922435D8600016E54 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				23E8F9CF22435DAD00016E54 /* AlphaWalletWeb3Provider.bundle */,
+				23E8F9CA22435DAD00016E54 /* Geth.framework */,
+				23E8F9CB22435DAD00016E54 /* iVersion */,
+			);
+			name = Frameworks;
+			path = QuickWallet/Frameworks;
+			sourceTree = "<group>";
+		};
+		23E8F9CB22435DAD00016E54 /* iVersion */ = {
+			isa = PBXGroup;
+			children = (
+				23E8F9CC22435DAD00016E54 /* iVersion.h */,
+				23E8F9CD22435DAD00016E54 /* iVersion.m */,
+				23E8F9CE22435DAD00016E54 /* iVersion.bundle */,
+			);
+			path = iVersion;
+			sourceTree = "<group>";
+		};
+		23E8F9D6224362E300016E54 /* NativeModules */ = {
+			isa = PBXGroup;
+			children = (
+				23E8F9D7224362E300016E54 /* RCTLayer2 */,
+				23E8F9DA224362E300016E54 /* RCTBundle */,
+				23E8F9DD224362E300016E54 /* RCTGeth */,
+			);
+			name = NativeModules;
+			path = QuickWallet/NativeModules;
+			sourceTree = "<group>";
+		};
+		23E8F9D7224362E300016E54 /* RCTLayer2 */ = {
+			isa = PBXGroup;
+			children = (
+				23E8F9D8224362E300016E54 /* RCTLayer2Module.m */,
+				23E8F9D9224362E300016E54 /* RCTLayer2Module.h */,
+			);
+			path = RCTLayer2;
+			sourceTree = "<group>";
+		};
+		23E8F9DA224362E300016E54 /* RCTBundle */ = {
+			isa = PBXGroup;
+			children = (
+				23E8F9DB224362E300016E54 /* RCTBundleModule.m */,
+				23E8F9DC224362E300016E54 /* RCTBundleModule.h */,
+			);
+			path = RCTBundle;
+			sourceTree = "<group>";
+		};
+		23E8F9DD224362E300016E54 /* RCTGeth */ = {
+			isa = PBXGroup;
+			children = (
+				23E8F9DF224362E300016E54 /* SignModel.h */,
+				23E8F9E1224362E300016E54 /* SignModel.m */,
+				23E8F9DE224362E300016E54 /* FileManager.h */,
+				23E8F9E0224362E300016E54 /* FileManager.m */,
+				23E8F9EC2243632100016E54 /* RCTGethModule.h */,
+				23E8F9EB2243632000016E54 /* RCTGethModule.m */,
+			);
+			path = RCTGeth;
+			sourceTree = "<group>";
+		};
+		23E8F9E2224362E300016E54 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				23E8F9EE2243635A00016E54 /* OCWeb3Utils.h */,
+				23E8F9EF2243635A00016E54 /* OCWeb3Utils.m */,
+			);
+			name = Swift;
+			path = QuickWallet/Swift;
+			sourceTree = "<group>";
+		};
+		23E8F9E3224362E300016E54 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				23E8F9E4224362E300016E54 /* NSData+Category.h */,
+				23E8F9E5224362E300016E54 /* NSData+Category.m */,
+			);
+			name = Category;
+			path = QuickWallet/Category;
 			sourceTree = "<group>";
 		};
 		25F55D4E60E248A190755341 /* Resources */ = {
@@ -1509,7 +1628,9 @@
 				5037BBAB8B5547DCB493AEEC /* FontAwesome5_Brands.ttf in Resources */,
 				83865B8771854BC4A438CBDA /* FontAwesome5_Regular.ttf in Resources */,
 				242FD689437344E69A111BEB /* FontAwesome5_Solid.ttf in Resources */,
+				23E8F9D222435DAD00016E54 /* iVersion.bundle in Resources */,
 				D3AF0AA060D34B90BE739248 /* Foundation.ttf in Resources */,
+				23E8F9D322435DAD00016E54 /* AlphaWalletWeb3Provider.bundle in Resources */,
 				4984DD0ACE5F46DA99D954C9 /* Ionicons.ttf in Resources */,
 				E99936525AA444BD869AB32C /* MaterialCommunityIcons.ttf in Resources */,
 				8CD7E13F86E5438EB5C665B6 /* MaterialIcons.ttf in Resources */,
@@ -1580,8 +1701,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23E8F9EA224362E300016E54 /* NSData+Category.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				23E8F9E7224362E300016E54 /* RCTBundleModule.m in Sources */,
+				23E8F9D122435DAD00016E54 /* iVersion.m in Sources */,
+				23E8F9F02243635A00016E54 /* OCWeb3Utils.m in Sources */,
+				23E8F9E6224362E300016E54 /* RCTLayer2Module.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				23E8F9ED2243632100016E54 /* RCTGethModule.m in Sources */,
+				23E8F9E8224362E300016E54 /* FileManager.m in Sources */,
+				23E8F9E9224362E300016E54 /* SignModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1728,9 +1857,14 @@
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/QuickWallet/Frameworks",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
@@ -1759,8 +1893,13 @@
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/QuickWallet/Frameworks",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
